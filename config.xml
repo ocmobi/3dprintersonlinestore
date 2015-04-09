@@ -3,7 +3,7 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.ocmobi.3dprintersonlinestore"
+        id        = "com.ocmobi.threedprintersonlinestore"
         version   = "1.0.0">
 
     <name>3D Printers Online Store</name>
