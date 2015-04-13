@@ -7,7 +7,11 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi" />
         <title>3D Printers Online Store</title>
     </head>
-    <body>
+    <body style="width:100%;height=100%;">
+        <div id="loader" style="position:relative;height:100%;width:100%;">
+            <img src="loader.gif" style="position:absolute;top:0;left:0;right:0;bottom:0;margin:auto;"/>
+        </div>
+        
         <script type="text/javascript" src="phonegap.js"></script>
 
         <script type="text/javascript">
@@ -20,7 +24,7 @@
             function onDeviceReady() 
             {
                  //show splash + set indicator
-                 navigator.splashscreen.show();
+                 //navigator.splashscreen.show();
                  splash = true;
                  
                  //begin opening domain (hidden)
@@ -33,7 +37,7 @@
                      if( splash == true )
                      {
                          //hide splash
-                         navigator.splashscreen.hide();
+                         //navigator.splashscreen.hide();
                          
                          //show browser
                          browser.show();
