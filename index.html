@@ -11,7 +11,38 @@
         <script type="text/javascript" src="phonegap.js"></script>
 
         <script type="text/javascript">
-            var ref = window.open('https://www.3dprintersonlinestore.com', '_blank', 'location=no,toolbar=no');
+            //global for splash indicator
+            var splash = false;
+            
+            //on device ready begin app
+            document.addEventListener("deviceready", onDeviceReady, false);
+            
+            function onDeviceReady() 
+            {
+                 //show splash + set indicator
+                 navigator.splashscreen.show();
+                 splash = true;
+                 
+                 //begin opening domain (hidden)
+                 var browser = window.open('https://www.3dprintersonlinestore.com', '_blank', 'location=no,toolbar=no,hidden=yes');
+
+                 //once load has completed, stop splash and show browser
+                 browser.addEventListener('loadstop', function(event) 
+                 { 
+                     //one time only on init
+                     if( splash == true )
+                     {
+                         //hide splash
+                         navigator.splashscreen.hide();
+                         
+                         //show browser
+                         browser.show();
+                         
+                         //mark indicator
+                         splash = false;
+                     }
+                 });
+            }            
         </script>
     </body>
 </html>
