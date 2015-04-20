@@ -16,6 +16,9 @@
         <script type="text/javascript" src="phonegap.js"></script>
 
         <script type="text/javascript">
+            //re-assign to updated browser b/c of improved features
+            window.open = cordova.InAppBrowser.open;
+        
             //global for splash indicator
             var splash = false;
             
@@ -29,17 +32,7 @@
                  splash = true;
                  
                  //begin opening domain (hidden)
-                 var options = '';
-                 if( device.platform == 'Android' )
-                 {
-                    options = 'location=no,toolbar=no,hidden=yes,zoom=no,hardwareback=yes';      
-                 }
-                 else
-                 {
-                     options = 'location=no,toolbar=no,hidden=yes,zoom=no';
-                 }
-                 
-                 var browser = window.open('https://www.3dprintersonlinestore.com', '_blank', options);
+                 var browser = window.open('https://www.3dprintersonlinestore.com', '_blank', 'location=no,toolbar=no,hidden=yes,zoom=no,hardwareback=yes');
 
                  //once load has completed, stop splash and show browser
                  browser.addEventListener('loadstop', function(event) 
