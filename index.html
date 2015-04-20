@@ -29,7 +29,17 @@
                  splash = true;
                  
                  //begin opening domain (hidden)
-                 var browser = window.open('https://www.3dprintersonlinestore.com', '_blank', 'location=no,toolbar=no,hidden=yes,zoom=no');
+                 var options = '';
+                 if( device.platform == 'Android' )
+                 {
+                    options = 'location=no,toolbar=no,hidden=yes,zoom=no,hardwareback=yes';      
+                 }
+                 else
+                 {
+                     options = 'location=no,toolbar=no,hidden=yes,zoom=no';
+                 }
+                 
+                 var browser = window.open('https://www.3dprintersonlinestore.com', '_blank', options);
 
                  //once load has completed, stop splash and show browser
                  browser.addEventListener('loadstop', function(event) 
