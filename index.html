@@ -10,7 +10,7 @@
     <body>
         <!-- centered logo/splash -->
         <div>
-            <img src="splash.png" width="100%" style="position:absolute;top:0;bottom:0;right:0;left:0;margin:auto;"/>
+            <img src="splash-screen.png" width="100%" style="position:absolute;top:0;bottom:0;right:0;left:0;margin:auto;"/>
         </div>
       
         <script type="text/javascript" src="phonegap.js"></script>
@@ -29,7 +29,7 @@
                  splash = true;
                  
                  //begin opening domain (hidden)
-                 var browser = window.open('https://www.3dprintersonlinestore.com', '_blank', 'location=no,toolbar=no,hidden=yes');
+                 var browser = cordova.InAppBrowser.open('https://www.3dprintersonlinestore.com', '_blank', 'location=no,toolbar=no,hidden=yes,zoom=no,hardwareback=yes');
 
                  //once load has completed, stop splash and show browser
                  browser.addEventListener('loadstop', function(event) 
